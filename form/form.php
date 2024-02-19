@@ -87,15 +87,15 @@
         <p>Любимый язык программирования:</p>
         <ul>
           <li>
-            <input type="checkbox" id="JS" name="languages[]" value=1>
+            <input type="checkbox" id="JS" name="languages[]" value='JS'>
             <label for="JS">JS</label>
           </li>
           <li>
-            <input type="checkbox" id="Python" name="languages[]" value=2>
+            <input type="checkbox" id="Python" name="languages[]" value='Python'>
             <label for="Python">Python</label>
           </li>
           <li>
-            <input type="checkbox" id="C++" name="languages[]" value=3>
+            <input type="checkbox" id="C++" name="languages[]" value='C++'>
             <label for="C++">C++</label>
           </li>
         </ul>
