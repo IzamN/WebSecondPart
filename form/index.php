@@ -28,7 +28,7 @@ if (isset($_POST["languages"])) {
   $filtred_languages = array_filter(
     $languages,
     function ($value) {
-      return ($value == 1 || $value == 2 || $value == 3);
+      return ($value == 'JS' || $value == 'Python' || $value == 'C++');
     }
   );
 }
@@ -115,9 +115,9 @@ try {
 $stmt = $db->prepare("INSERT INTO application (name, phone, email, day, month, year, pol, biography) VALUES (?, ?,?, ?, ?, ?,?,?)");
 $stmt->execute([$name, $phone,$email, $day, $month, $year, $pol, $biography]);
 $application_id = $db->lastInsertId();
-$stmt = $db->prepare("INSERT INTO languages (application_id, language_id) VALUES (?, ?)");
-foreach ($languages as $language_id) {
-  $stmt->execute([$application_id, $language_id]);
+$stmt = $db->prepare("INSERT INTO languages (application_id, language) VALUES (?, ?)");
+foreach ($languages as $language) {
+  $stmt->execute([$application_id, $language]);
 }
 } catch (PDOException $e) {
   print('Error : ' . $e->getMessage());
