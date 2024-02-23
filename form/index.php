@@ -108,11 +108,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   if (empty($phone)) {
     setcookie('phone_error1', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
-  } else if (!filter_var($phone, FILTER_VALIDATE_EMAIL)) {
-    setcookie('phone_error2', '1', time() + 24 * 60 * 60);
-    setcookie('phone_value', $phone, time() + 30 * 24 * 60 * 60);
-    $errors = TRUE;
-  } else {
+  } 
+  // else if (!filter_var($phone, FILTER_VALIDATE_EMAIL)) {
+  //   setcookie('phone_error2', '1', time() + 24 * 60 * 60);
+  //   setcookie('phone_value', $phone, time() + 30 * 24 * 60 * 60);
+  //   $errors = TRUE;
+  // } 
+  else {
     setcookie('phone_value', $phone, time() + 30 * 24 * 60 * 60);
   }
 

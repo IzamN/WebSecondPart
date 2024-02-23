@@ -32,18 +32,19 @@
 
     <div class="form-content">
       <div class="form-item">
-        <label  for="name" <?php if ($errors['name']) {print 'class="error"';} ?>>ФИО  <?php if ($messages['name']) print($messages['name']);?></label><br>
+        <label  for="name" <?php if ($errors['name']) {print 'class="error"';} ?>>ФИО  <?php if ($messages['name']) print($messages['name']);?></label>
         <input class="input name" type="text" name="name" value="<?php echo $values['name']; ?>">
       </div>
       <div class="form-item">
-        <label for="phone" <?php if ($errors['phone1'] || $errors['phone2']) {print 'class="error"';} ?>>Телефон<?php if ($messages['phone1']) print($messages['phone1']);  if ($messages['phone2'])print($messages['phone2']); ?></label><br>
+        <label for="phone" <?php if ($errors['phone1'] || $errors['phone2']) {print 'class="error"';} ?>>Телефон<?php if ($messages['phone1']) print($messages['phone1']);  if ($messages['phone2'])print($messages['phone2']); ?></label>
         <input class="input tel" type="tel" placeholder="" name="phone" value="<?php print $values['phone']; ?>">
       </div>
       <div class="form-item">
-          <label for="email" <?php if ($errors['email1'] || $errors['email2']) {print 'class="error"';} ?>>Email<?php if ($messages['email1']) print($messages['email1']);  if ($messages['email2'])print($messages['email2']); ?></label> <br>
+          <label for="email" <?php if ($errors['email1'] || $errors['email2']) {print 'class="error"';} ?>>Email<?php if ($messages['email1']) print($messages['email1']);  if ($messages['email2'])print($messages['email2']); ?></label> 
         <input class="input email" type="email"  name="email" value="<?php print $values['email']; ?>">
       </div>
       <div class="date">
+        <span>Дата рождения <?php if ($messages['year']) print($messages['year']);?></span>
         <div class="date-item">
       <span>Число:</span>
         <select name="day">
@@ -65,7 +66,7 @@
         </select>
         </div>
         <div class="date-item">
-        <span <?php if ($errors['year']) {print 'class="error"';} ?>>Год :<?php if ($messages['year']) print($messages['year']);?></span>
+        <span <?php if ($errors['year']) {print 'class="error"';} ?>>Год :</span>
         <select name="year">
           <?php 
             for ($i = 2024; $i >= 1922; $i--) {
@@ -111,7 +112,7 @@
         </ul>
       </div>
       <div class="form-item">
-        <p  <?php if ($errors['biography1'] || $errors['biography2']) {print 'error';} ?>><?php $messages['biography']?>О себе:<?php if ($messages['biography1']) print($messages['biography1']); if ($messages['biography2'])print($messages['biography2']); ?></p>
+        <p  <?php if ($errors['biography1'] || $errors['biography2']) {print 'class="error"';} ?>> О себе:<?php if ($messages['biography1']) print($messages['biography1']); if ($messages['biography2'])print($messages['biography2']);?> </p>
         <textarea name="biography" cols=24 rows=4 maxlength=128></textarea>
       </div>
     </div>
