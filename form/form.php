@@ -98,22 +98,22 @@
         <p <?php if ($errors['languages']) {print 'class="error"';} ?> >Любимый язык программирования:<?php if ($messages['languages']) print($messages['languages']);?></p>
         <ul>
           <li>
-            <input type="checkbox" id="JS" name="languages[]" value='JS' <?php if (!empty($values['languages'])) {print 'checked';}?>>
+            <input type="checkbox" id="JS" name="languages[]" value='JS' >
             <label for="JS">JS</label>
           </li>
           <li>
-            <input type="checkbox" id="Python" name="languages[]" value='Python' <?php if (!empty($values['languages'])) {print 'checked';}?>>
+            <input type="checkbox" id="Python" name="languages[]" value='Python' >
             <label for="Python">Python</label>
           </li>
           <li>
-            <input type="checkbox" id="C++" name="languages[]" value='C++' <?php if (!empty($values['languages'])) {print 'checked';}?>>
+            <input type="checkbox" id="C++" name="languages[]" value='C++' >
             <label for="C++">C++</label>
           </li>
         </ul>
       </div>
       <div class="form-item">
         <p  <?php if ($errors['biography1'] || $errors['biography2']) {print 'class="error"';} ?>> О себе:<?php if ($messages['biography1']) print($messages['biography1']); else if ($messages['biography2'])print($messages['biography2']);?> </p>
-        <textarea name="biography" cols=24 rows=4 maxlength=128></textarea>
+        <textarea name="biography" cols=24 rows=4 maxlength=128 value="<?php echo $values['biography']; ?>"></textarea>
       </div>
     </div>
     <div class="send">
