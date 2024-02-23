@@ -19,17 +19,6 @@
   <form action="" method="POST">
     <h1>Форма</h1>
 
-     <?php
-    if (!empty($messages)) {
-      print('<div id="messages">');
-      // Выводим все сообщения.
-      foreach ($messages as $message) {
-        print($message);
-      }
-      print('</div>');
-    }
-    ?> 
-
     <div class="form-content">
       <div class="form-item">
         <label  for="name" <?php if ($errors['name']) {print 'class="error"';} ?>>ФИО  <?php if ($messages['name']) print($messages['name']);?></label>
