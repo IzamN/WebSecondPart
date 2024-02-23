@@ -11,11 +11,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $errors = array();
   $errors['name'] = !empty($_COOKIE['name_error']);
   $errors['phone1'] = !empty($_COOKIE['phone_error1']);
-  // $errors['phone2'] = !empty($_COOKIE['phone_error2']);
+
   $errors['email1'] = !empty($_COOKIE['email_error1']);
   $errors['email2'] = !empty($_COOKIE['email_error2']);
   $errors['year'] = !empty($_COOKIE['year_error']);
-  $errors['gender'] = !empty($_COOKIE['gender_error']);
+
   $errors['languages'] = !empty($_COOKIE['languages_error']);
   $errors['biography1'] = !empty($_COOKIE['biography_error1']);
   $errors['biography2'] = !empty($_COOKIE['biography_error2']);
@@ -36,18 +36,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     setcookie('phone_error1','',100000);
     $messages['phone1']='<p class="msg">Заполните поле телефон</p>';
   }
-  // if ($errors['phone2']){
-  //   setcookie('phone_errors2','',100000);
-  //   $messages['phone2']='<p class="msg">Неверно заполнено поле телефон</p>';
-  // }
+
  if ($errors['year']) {
     setcookie('year_error', '', 100000);
     $messages['year'] = '<p class="msg">Вам должно быть 14 лет</p>';
   }
-  if ($errors['gender']) {
-    setcookie('gender_error', '', 100000);
-    $messages['gender'] = '<p class="msg">Выберите пол</p>';
-  }
+
   if ($errors['languages']) {
     setcookie('languages_error', '', 100000);
     $messages['languages'] = '<p class="msg">Выберите язык программирования</p>';
@@ -137,12 +131,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     setcookie('year_value', $year, time() + 30 * 24 * 60 * 60);
   }
 
-  if (empty($gender)) {
-    setcookie('gender_error', '1', time() + 24 * 60 * 60);
-    $errors = TRUE;
-  } else {
+
     setcookie('gender_value', $gender, time() + 30 * 24 * 60 * 60);
-  }
+  
 
   if (empty($languages)) {
     setcookie('languages_error', '1', time() + 24 * 60 * 60);
