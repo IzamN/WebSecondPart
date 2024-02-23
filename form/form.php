@@ -36,7 +36,7 @@
         <input class="input name" type="text" name="name" value="<?php echo $values['name']; ?>">
       </div>
       <div class="form-item">
-        <label class="" for="phone" <?php if ($errors['phone1'] || $errors['phone2']) {print 'class="error"';} ?>>Teлефон</label><br>
+        <label class="" for="phone" <?php if ($errors['phone1'] || $errors['phone2']) {print 'class="error"';} ?>><?php $messages['phone']?>Teлефон</label><br>
         <input class="input tel" type="tel" placeholder="" name="phone" value="<?php print $values['phone']; ?>">
       </div>
       <div class="form-item">
@@ -111,7 +111,7 @@
         </ul>
       </div>
       <div class="form-item">
-        <p class="big-text" <?php if ($errors['biography1'] || $errors['biography2']) {print 'error';} ?>>О себе:</p>
+        <p class="big-text" <?php if ($errors['biography1'] || $errors['biography2']) {print 'error';} ?>><?php $messages['biography']?>О себе:</p>
         <textarea name="biography" cols=24 rows=4 maxlength=128></textarea>
       </div>
     </div>
