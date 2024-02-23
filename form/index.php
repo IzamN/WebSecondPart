@@ -178,7 +178,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     setcookie('email_error1', '', 100000);
     setcookie('email_error2', '', 100000);
     setcookie('year_error', '', 100000);
-    setcookie('gender_error', '', 100000);
     setcookie('languages_error', '', 100000);
     setcookie('biography_error1', '', 100000);
     setcookie('biography_error2', '', 100000);

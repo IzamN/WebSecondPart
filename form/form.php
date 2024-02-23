@@ -82,7 +82,7 @@
         
       </div>
       <div class="form-item">
-        <p>Пол:<?php if ($messages['gender']) print($messages['gender']);?></p>
+        <p>Пол:</p>
         <ul>
           <li>
             <input type="radio" id="radioMale" name="pol" value="male"  <?php if ($values['gender'] == 'male') {print 'checked';} ?> checked>
@@ -98,22 +98,22 @@
         <p <?php if ($errors['languages']) {print 'class="error"';} ?> >Любимый язык программирования:<?php if ($messages['languages']) print($messages['languages']);?></p>
         <ul>
           <li>
-            <input type="checkbox" id="JS" name="languages[]" value='JS' >
+            <input type="checkbox" id="JS" name="languages[]" value='JS' <?php if ($values['languages'] == 'JS') {print 'checked';} ?>>
             <label for="JS">JS</label>
           </li>
           <li>
-            <input type="checkbox" id="Python" name="languages[]" value='Python' >
+            <input type="checkbox" id="Python" name="languages[]" value='Python'  <?php if ($values['languages'] == 'Python') {print 'checked';} ?>>
             <label for="Python">Python</label>
           </li>
           <li>
-            <input type="checkbox" id="C++" name="languages[]" value='C++' >
+            <input type="checkbox" id="C++" name="languages[]" value='C++' <?php if ($values['languages'] == 'C++') {print 'checked';} ?> >
             <label for="C++">C++</label>
           </li>
         </ul>
       </div>
       <div class="form-item">
         <p  <?php if ($errors['biography1'] || $errors['biography2']) {print 'class="error"';} ?>> О себе:<?php if ($messages['biography1']) print($messages['biography1']); else if ($messages['biography2'])print($messages['biography2']);?> </p>
-        <textarea name="biography" cols=24 rows=4 maxlength=128 value="<?php echo $values['biography']; ?>"></textarea>
+        <textarea name="biography" cols=24 rows=4 maxlength=128 ><?php if ($values['biography']) print($values['biography']); ?></textarea>
       </div>
     </div>
     <div class="send">
