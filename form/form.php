@@ -19,7 +19,7 @@
   <form action="" method="POST">
     <h1>Форма</h1>
 
-    <!-- <?php
+     <?php
     if (!empty($messages)) {
       print('<div id="messages">');
       // Выводим все сообщения.
@@ -28,7 +28,7 @@
       }
       print('</div>');
     }
-    ?> -->
+    ?> 
 
     <div class="form-content">
       <div class="form-item">

@@ -175,7 +175,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   else {
     setcookie('name_error', '', 100000);
     setcookie('phone_error1', '', 100000);
-    setcookie('phone_error2', '', 100000);
     setcookie('email_error1', '', 100000);
     setcookie('email_error2', '', 100000);
     setcookie('year_error', '', 100000);
