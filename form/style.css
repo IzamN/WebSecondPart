@@ -52,7 +52,9 @@ body {
   ul li label {
     margin-left: 5px;
   }
-  
+  .error {
+    color: red;
+}
  
   
   textarea {
