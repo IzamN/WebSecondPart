@@ -32,11 +32,11 @@
 
     <div class="form-content">
       <div class="form-item">
-        <label class="" for="name" <?php if ($errors['name']) {print 'class="error"';} ?>> <?php $messages['name']?>ФИО</label><br>
+        <label class="" for="name" <?php if ($errors['name']) {print 'class="error"';} ?>> <?php print($messages['name'])?>ФИО</label><br>
         <input class="input name" type="text" name="name" value="<?php echo $values['name']; ?>">
       </div>
       <div class="form-item">
-        <label class="" for="phone" <?php if ($errors['phone1'] || $errors['phone2']) {print 'class="error"';} ?>><?php $messages['phone']?>Teлефон</label><br>
+        <label class="" for="phone" <?php if ($errors['phone1'] || $errors['phone2']) {print 'class="error"';} ?>><?php print($messages['phone'])?>Teлефон</label><br>
         <input class="input tel" type="tel" placeholder="" name="phone" value="<?php print $values['phone']; ?>">
       </div>
       <div class="form-item">
