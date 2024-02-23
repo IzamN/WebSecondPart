@@ -19,7 +19,7 @@
   <form action="" method="POST">
     <h1>Форма</h1>
 
-    <?php
+    <!-- <?php
     if (!empty($messages)) {
       print('<div id="messages">');
       // Выводим все сообщения.
@@ -28,19 +28,19 @@
       }
       print('</div>');
     }
-    ?>
+    ?> -->
 
     <div class="form-content">
       <div class="form-item">
-        <p  for="name" <?php if ($errors['name']) {print 'class="error"';} ?>>ФИО  <?php print($messages['name']?$messages['name']:" ");?></p><br>
+        <label  for="name" <?php if ($errors['name']) {print 'class="error"';} ?>>ФИО  <?php if ($messages['name']) print($messages['name']);?></label><br>
         <input class="input name" type="text" name="name" value="<?php echo $values['name']; ?>">
       </div>
       <div class="form-item">
-        <label class="" for="phone" <?php if ($errors['phone1'] || $errors['phone2']) {print 'class="error"';} ?>><?php print($messages['phone'])?>Teлефон</label><br>
+        <label for="phone" <?php if ($errors['phone1'] || $errors['phone2']) {print 'class="error"';} ?>>Телефон<?php if ($messages['phone1']) print($messages['phone1']);  if ($messages['phone2'])print($messages['phone2']); ?></label><br>
         <input class="input tel" type="tel" placeholder="" name="phone" value="<?php print $values['phone']; ?>">
       </div>
       <div class="form-item">
-          <label class="" for="email" <?php if ($errors['email1'] || $errors['email2']) {print 'class="error"';} ?>>Email</label> <br>
+          <label for="email" <?php if ($errors['email1'] || $errors['email2']) {print 'class="error"';} ?>>Email<?php if ($messages['email1']) print($messages['email1']);  if ($messages['email2'])print($messages['email2']); ?></label> <br>
         <input class="input email" type="email"  name="email" value="<?php print $values['email']; ?>">
       </div>
       <div class="date">
@@ -65,7 +65,7 @@
         </select>
         </div>
         <div class="date-item">
-        <span <?php if ($errors['year']) {print 'class="error"';} ?>>Год :</span>
+        <span <?php if ($errors['year']) {print 'class="error"';} ?>>Год :<?php if ($messages['year']) print($messages['year']);?></span>
         <select name="year">
           <?php 
             for ($i = 2024; $i >= 1922; $i--) {
@@ -81,7 +81,7 @@
         
       </div>
       <div class="form-item">
-        <p>Пол:</p>
+        <p>Пол:<?php if ($messages['gender']) print($messages['gender']);?></p>
         <ul>
           <li>
             <input type="radio" id="radioMale" name="pol" value="male"  <?php if ($values['gender'] == 'male') {print 'checked';} ?> checked>
@@ -94,7 +94,7 @@
         </ul>
       </div>
       <div class="form-item">
-        <p <?php if ($errors['languages']) {print 'class="error"';} ?> >Любимый язык программирования:</p>
+        <p <?php if ($errors['languages']) {print 'class="error"';} ?> >Любимый язык программирования:<?php if ($messages['languages']) print($messages['languages']);?></p>
         <ul>
           <li>
             <input type="checkbox" id="JS" name="languages[]" value='JS' <?php if (!empty($values['languages'])) {print 'checked';}?>>
@@ -111,14 +111,14 @@
         </ul>
       </div>
       <div class="form-item">
-        <p class="big-text" <?php if ($errors['biography1'] || $errors['biography2']) {print 'error';} ?>><?php $messages['biography']?>О себе:</p>
+        <p  <?php if ($errors['biography1'] || $errors['biography2']) {print 'error';} ?>><?php $messages['biography']?>О себе:<?php if ($messages['biography1']) print($messages['biography1']); if ($messages['biography2'])print($messages['biography2']); ?></p>
         <textarea name="biography" cols=24 rows=4 maxlength=128></textarea>
       </div>
     </div>
     <div class="send">
       <div class="contract">
         <input type="checkbox" id="checkboxContract" name="checkboxContract" <?php if ($values['checkboxContract'] == '1') {print 'checked';} ?> >
-        <label for="checkboxContract">С контрактом ознакомлен(а)</label>
+        <label for="checkboxContract">С контрактом ознакомлен(а)  <?php if ($messages['checkboxContract']) print($messages['checkboxContract']);?></label>
       </div>
       <input class="btn" type="submit" name="submit" value="Отправить" />
     </div>
