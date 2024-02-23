@@ -32,7 +32,7 @@
 
     <div class="form-content">
       <div class="form-item">
-        <label class="" for="name" <?php if ($errors['name']) {print 'class="error"';} ?>>ФИО</label><br>
+        <label class="" for="name" <?php if ($errors['name']) {print 'class="error"';} ?>> <?php $messages['name']?>ФИО</label><br>
         <input class="input name" type="text" name="name" value="<?php echo $values['name']; ?>">
       </div>
       <div class="form-item">
