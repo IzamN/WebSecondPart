@@ -42,7 +42,7 @@
         <input class="input name" type="text" name="name" value="<?php echo $values['name']; ?>">
       </div>
       <div class="form-item">
-        <label for="phone" <?php if ($errors['phone1'] || $errors['phone2']) {print 'class="error"';} ?>>Телефон</label>
+        <label for="phone" <?php if ($errors['phone1']) {print 'class="error"';} ?>>Телефон</label>
         <input class="input tel" type="tel" placeholder="" name="phone" value="<?php print $values['phone']; ?>">
       </div>
       <div class="form-item">
@@ -105,17 +105,17 @@
         <ul>
           <li>
             <input type="checkbox" id="JS" name="languages[]" value='1' 
-            <?php if (isset($values['languages']) && !empty($values['languages']) && in_array(1, unserialize($values['languages']))) {print 'checked';}?>
+          
             >
             <label for="JS">JS</label>
           </li>
           <li>
-            <input type="checkbox" id="Python" name="languages[]" value='2'  <?php if (isset($values['languages']) && !empty($values['languages']) && in_array(2, unserialize($values['languages']))) {print 'checked';}?>
+            <input type="checkbox" id="Python" name="languages[]" value='2'
             >
             <label for="Python">Python</label>
           </li>
           <li>
-            <input type="checkbox" id="C++" name="languages[]" value='3' <?php if (isset($values['languages']) && !empty($values['languages']) && in_array(3, unserialize($values['languages']))) {print 'checked';}?> >
+            <input type="checkbox" id="C++" name="languages[]" value='3' >
             <label for="C++">C++</label>
           </li>
         </ul>
