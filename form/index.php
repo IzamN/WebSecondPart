@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $values['day'] = empty($_COOKIE['day_value']) ? '' :  htmlspecialchars(strip_tags($_COOKIE['day_value']));
   $values['month'] = empty($_COOKIE['month_value']) ? '' :  htmlspecialchars(strip_tags($_COOKIE['month_value']));
   $values['year'] = empty($_COOKIE['year_value']) ? '' :  htmlspecialchars(strip_tags($_COOKIE['year_value']));
-  $values['gender'] = empty($_COOKIE['gender_value']) ? '' :  htmlspecialchars(strip_tags($_COOKIE['gender_value']));
+  $values['pol'] = empty($_COOKIE['pol_value']) ? '' :  htmlspecialchars(strip_tags($_COOKIE['pol_value']));
   $values['languages'] = empty($_COOKIE['languages_value']) ? '' :  htmlspecialchars(strip_tags($_COOKIE['languages_value']));
   $values['biography'] = empty($_COOKIE['biography_value']) ? '' :  htmlspecialchars(strip_tags($_COOKIE['biography_value']));
   $values['checkboxContract'] = empty($_COOKIE['checkboxContract_value']) ? '' :  htmlspecialchars(strip_tags($_COOKIE['checkboxContract_value']));

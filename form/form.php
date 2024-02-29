@@ -91,11 +91,11 @@
         <p>Пол:</p>
         <ul>
           <li>
-            <input type="radio" id="radioMale" name="pol" value="male"  <?php if ($values['gender'] == 'male') {print 'checked';} ?> checked>
+            <input type="radio" id="radioMale" name="pol" value="male"  <?php if ($values['pol'] == 'male') {print 'checked';} ?> checked>
             <label for="radioMale">Муж</label>
           </li>
           <li>
-            <input type="radio" id="radioFemale" name="pol" value="female" <?php if ($values['gender'] == 'female') {print 'checked';} ?>>
+            <input type="radio" id="radioFemale" name="pol" value="female" <?php if ($values['pol'] == 'female') {print 'checked';} ?>>
             <label for="radioFemale">Жен</label>
           </li>
         </ul>
@@ -105,17 +105,20 @@
         <ul>
           <li>
             <input type="checkbox" id="JS" name="languages[]" value='1' 
-          
+            <?php if (isset($values['languages']) && !empty($values['languages']) && in_array(1, unserialize($values['languages']))) {print 'checked';}?>
             >
             <label for="JS">JS</label>
           </li>
           <li>
             <input type="checkbox" id="Python" name="languages[]" value='2'
+            <?php if (isset($values['languages']) && !empty($values['languages']) && in_array(2, unserialize($values['languages']))) {print 'checked';}?>
             >
             <label for="Python">Python</label>
           </li>
           <li>
-            <input type="checkbox" id="C++" name="languages[]" value='3' >
+            <input type="checkbox" id="C++" name="languages[]" value='3' 
+            <?php if (isset($values['languages']) && !empty($values['languages']) && in_array(3, unserialize($values['languages']))) {print 'checked';}?>
+            >
             <label for="C++">C++</label>
           </li>
         </ul>
