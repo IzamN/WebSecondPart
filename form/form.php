@@ -24,6 +24,13 @@
         <div id="header"><a href=login.php>Войти</a></div>
     <?php
     }
+    if (!empty($messages)) {
+      print('<div id="messages">');
+      foreach ($messages as $message) {
+        print($message);
+      }
+      print('</div>');
+    }
     
   ?>
   <form action="" method="POST">
@@ -35,14 +42,14 @@
         <input class="input name" type="text" name="name" value="<?php echo $values['name']; ?>">
       </div>
       <div class="form-item">
-        <label for="phone" <?php if ($errors['phone1'] || $errors['phone2']) {print 'class="error"';} ?>>Телефон<?php if ($messages['phone1']) print($messages['phone1']); else if ($messages['phone2'])print($messages['phone2']); ?></label>
+        <label for="phone" <?php if ($errors['phone1'] || $errors['phone2']) {print 'class="error"';} ?>>Телефон</label>
         <input class="input tel" type="tel" placeholder="" name="phone" value="<?php print $values['phone']; ?>">
       </div>
       <div class="form-item">
-          <label for="email" <?php if ($errors['email1'] || $errors['email2']) {print 'class="error"';} ?>>Email<?php if ($messages['email1']) print($messages['email1']);  else if ($messages['email2'])print($messages['email2']); ?></label> 
+          <label for="email" <?php if ($errors['email1'] || $errors['email2']) {print 'class="error"';} ?>>Email</label> 
         <input class="input email" type="email"  name="email" value="<?php print $values['email']; ?>">
       </div>
-      <span <?php if ($errors['year']) {print 'class="error"';} ?>>Дата рождения <?php if ($messages['year']) print($messages['year']);?></span>
+      <span <?php if ($errors['year']) {print 'class="error"';} ?>>Дата рождения </span>
       <div class="date">
         <div class="date-item">
       <span>Число:</span>
@@ -94,7 +101,7 @@
         </ul>
       </div>
       <div class="form-item">
-        <p <?php if ($errors['languages']) {print 'class="error"';} ?> >Любимый язык программирования:<?php if ($messages['languages']) print($messages['languages']);?></p>
+        <p <?php if ($errors['languages']) {print 'class="error"';} ?> >Любимый язык программирования:</p>
         <ul>
           <li>
             <input type="checkbox" id="JS" name="languages[]" value='1' 
@@ -114,14 +121,14 @@
         </ul>
       </div>
       <div class="form-item">
-        <p  <?php if ($errors['biography1'] || $errors['biography2']) {print 'class="error"';} ?>> О себе:<?php if ($messages['biography1']) print($messages['biography1']); else if ($messages['biography2'])print($messages['biography2']);?> </p>
+        <p  <?php if ($errors['biography1'] || $errors['biography2']) {print 'class="error"';} ?>> О себе: </p>
         <textarea name="biography" cols=24 rows=4 maxlength=128 ><?php if ($values['biography']) print($values['biography']); ?></textarea>
       </div>
     </div>
     <div class="send">
       <div class="contract">
         <input type="checkbox" id="checkboxContract" name="checkboxContract" <?php if ($values['checkboxContract'] == '1') {print 'checked';} ?> >
-        <label for="checkboxContract">С контрактом ознакомлен(а)  <?php if ($messages['checkboxContract']) print($messages['checkboxContract']);?></label>
+        <label for="checkboxContract">С контрактом ознакомлен(а) </label>
       </div>
       <?php if (!empty($_SESSION['login'])) {echo '<input type="hidden" name="token" value="' . $_SESSION["token"] . '">'; } ?>
       <input class="btn" type="submit" name="submit" value="Отправить" />
