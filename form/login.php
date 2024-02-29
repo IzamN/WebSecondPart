@@ -54,7 +54,7 @@ else {
 
   if ($stmt->rowCount() > 0) {
     $_SESSION['login'] = $_POST['login'];
-    $stmt = $db->prepare("SELECT application2_id FROM users WHERE login = ?");
+    $stmt = $db->prepare("SELECT application_id FROM users WHERE login = ?");
     $stmt->execute([$login]);
     $_SESSION['uid'] = $stmt->fetchColumn();
     header('Location: ./');
