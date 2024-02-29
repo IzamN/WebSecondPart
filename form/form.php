@@ -31,7 +31,7 @@
 
     <div class="form-content">
       <div class="form-item">
-        <label  for="name" <?php if ($errors['name']) {print 'class="error"';} ?>>ФИО  <?php if ($messages['name']) print($messages['name']);?></label>
+        <label  for="name" <?php if ($errors['name']) {print 'class="error"';} ?>>ФИО </label>
         <input class="input name" type="text" name="name" value="<?php echo $values['name']; ?>">
       </div>
       <div class="form-item">
