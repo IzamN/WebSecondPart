@@ -189,7 +189,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     setcookie('year_value', $year, time() + 30 * 24 * 60 * 60);
   }
 
-  setcookie('gender_value', $gender, time() + 30 * 24 * 60 * 60);
+  setcookie('pol_value', $pol, time() + 30 * 24 * 60 * 60);
 
   if (empty($languages)) {
     setcookie('languages_error', '1', time() + 24 * 60 * 60);
