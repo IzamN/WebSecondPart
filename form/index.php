@@ -251,7 +251,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
           $stmt->execute([$app_id]);
   
           $stmt = $db->prepare("INSERT INTO languages (application_id, language_id) VALUES (?, ?)");
-          foreach ($languages as $application_id) {
+          foreach ($languages as $language_id) {
             $stmt->execute([$app_id, $language_id]);
           }
         }
