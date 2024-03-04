@@ -1,10 +1,10 @@
 <?php
 header('Content-Type: text/html; charset=UTF-8');
 
-// $user = 'u67359';
-// $pass = '1353557';
-// $db = new PDO('mysql:host=localhost;dbname=u67359', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
-$db = new PDO('mysql:host=localhost;dbname=u67359', 'u67359', '29122003Nadya!');
+ $user = 'u67359';
+ $pass = '1353557';
+ $db = new PDO('mysql:host=localhost;dbname=u67359', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+
 
 //отправляем данные без измненения состояния сервера
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
@@ -90,8 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $values['biography'] = empty($_COOKIE['biography_value']) ? '' : $_COOKIE['biography_value'];
   $values['checkboxContract'] = empty($_COOKIE['checkboxContract_value']) ? '' : $_COOKIE['checkboxContract_value'];
 
-  // count(array_filter($errors)) === 0 &&
-  //!!!!!!!!!!!!!
+
 
   if (!empty($_COOKIE[session_name()]) && session_start() && !empty($_SESSION['login'])) {
     $_SESSION['token'] = bin2hex(random_bytes(32));
@@ -140,17 +139,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
           $values['biography'] = $dates[0]['biography'];
         }
       } 
-      // else {
-      //   $values['name'] = $name;
-      //   $values['phone'] = $phone;
-      //   $values['email'] = $email;
-      //   $values['day'] = $day;
-      //   $values['month'] = $month;
-      //   $values['year'] = $year;
-      //   $values['biography'] = $biography;
-      //   $values['checkboxContract'] = $checkboxContract;
-      //   $values['languages'] = serialize($languages);
-      // }
+     
 
 
     } catch (PDOException $e) {
@@ -174,13 +163,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $phone = $_POST['phone'];
   $biography = $_POST['biography'];
   $checkboxContract = $_POST['checkboxContract'];
-  //if (isset($_POST["languages"])) {
+  
   $languages = $_POST["languages"];
-    // $filtred_languages = array_filter($languages,function ($value) {
-    //     return ($value == 1 || $value == 2 || $value == 3);
-    //   }
-    // );
- // }
+ 
 
   if (empty($name)) {
     setcookie('name_error', '1', time() + 24 * 60 * 60);
@@ -190,9 +175,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     setcookie('name_error2', '1', time()+24*60*60);
     $errors=TRUE;
   } 
-  //else {
-    setcookie('name_value', $name, time() + 30 * 24 * 60 * 60);
-  //}
+  setcookie('name_value', $name, time() + 30 * 24 * 60 * 60);
   if (empty($phone)) {
     setcookie('phone_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
@@ -201,9 +184,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     setcookie('phone_error2', '2', time()+24*60*60);
     $errors=TRUE;
   }
-  //else {
-    setcookie('phone_value', $phone, time() + 30 * 24 * 60 * 60);
-  //}
+  setcookie('phone_value', $phone, time() + 30 * 24 * 60 * 60);
   if (empty($email)) {
     setcookie('email_error1', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
@@ -212,41 +193,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     setcookie('email_value', $email, time() + 30 * 24 * 60 * 60);
     $errors = TRUE;
   } 
-  //else {
+
     setcookie('email_value', $email, time() + 30 * 24 * 60 * 60);
-  //}
+
   setcookie('day_value', $day, time() + 30 * 24 * 60 * 60);
   setcookie('month_value', $month, time() + 30 * 24 * 60 * 60);
   if (2024 - $year < 18) {
     setcookie('year_error', '1', time() + 30 * 24 * 60 * 60);
     $errors = TRUE;
   } 
-  //else {
+
     setcookie('year_value', $year, time() + 30 * 24 * 60 * 60);
-  //}
+
   setcookie('pol_value', $pol, time() + 30 * 24 * 60 * 60);
   if (empty($languages)) {
     setcookie('languages_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
   } 
-  //else {
+
     setcookie('languages_value', serialize($languages), time() + 30 * 24 * 60 * 60);
-  //}
+
   if (empty($biography)) {
     setcookie('biography_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
   } 
-  //else {
-
-    setcookie('biography_value', $biography, time() + 30 * 24 * 60 * 60);
-  //}
+  setcookie('biography_value', $biography, time() + 30 * 24 * 60 * 60);
   if ($checkboxContract == '') {
     setcookie('checkboxContract_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
   } 
-  //else {
-    setcookie('checkboxContract_value', $checkboxContract, time() + 30 * 24 * 60 * 60);
-  //}
+  setcookie('checkboxContract_value', $checkboxContract, time() + 30 * 24 * 60 * 60);
 
 
   if ($errors) {
