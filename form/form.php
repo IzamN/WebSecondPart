@@ -38,25 +38,29 @@
 
     <div class="form-content">
       <div class="form-item">
-        <label  for="name" <?php if ($errors['name']) {print 'class="error"';} ?>>ФИО </label>
-        <input class="input name" type="text" name="name" value="<?php echo $values['name']; ?>">
+        <label  for="name" <?php if ($errors['name'] || $errors['name2']) {print 'class="error"';} ?>>ФИО </label>
+        <input class="input name" type="text" name="name" value="<?php print $values['name']; ?>">
       </div>
       <div class="form-item">
-        <label for="phone" <?php if ($errors['phone1']) {print 'class="error"';} ?>>Телефон</label>
-        <input class="input tel" type="tel" placeholder="" name="phone" value="<?php print $values['phone']; ?>">
+        <label for="phone" <?php if ($errors['phone'] || $errors['phone2']) {print 'class="error"';} ?>>Телефон</label>
+        <input class="input tel" type="tel" name="phone" value="<?php print $values['phone']; ?>">
       </div>
       <div class="form-item">
           <label for="email" <?php if ($errors['email1'] || $errors['email2']) {print 'class="error"';} ?>>Email</label> 
         <input class="input email" type="email"  name="email" value="<?php print $values['email']; ?>">
       </div>
-      <span <?php if ($errors['year']) {print 'class="error"';} ?>>Дата рождения </span>
       <div class="date">
         <div class="date-item">
+      <span <?php if ($errors['year']) print 'class="error"'; ?>> Дата рождения</span>
       <span>Число:</span>
         <select name="day">
           <?php
           for ($i = 1; $i < 32; $i++) {
-            printf('<option value="%d">%d </option>', $i, $i);
+            if ($i == $values['day']) {
+              printf('<option selected value="%d">%d</option>', $i, $i);
+            } else {
+            printf('<option value="%d">%d</option>', $i, $i);
+            }
           }
           ?>
         </select>
@@ -66,7 +70,11 @@
         <select name="month">
           <?php
           for ($i = 1; $i < 13; $i++) {
-            printf('<option value="%d">%d </option>', $i, $i);
+            if ($i == $values['month']) {
+              printf('<option selected value="%d">%d</option>', $i, $i);
+            } else {
+            printf('<option value="%d">%d</option>', $i, $i);
+            }
           }
           ?>
         </select>
@@ -77,9 +85,9 @@
           <?php 
             for ($i = 2024; $i >= 1922; $i--) {
               if ($i == $values['year']) {
-                printf('<option selected value="%d">%d год</option>', $i, $i);
+                printf('<option selected value="%d">%d</option>', $i, $i);
               } else {
-              printf('<option value="%d">%d год</option>', $i, $i);
+              printf('<option value="%d">%d</option>', $i, $i);
               }
             }
           ?>
@@ -105,26 +113,26 @@
         <ul>
           <li>
             <input type="checkbox" id="JS" name="languages[]" value='1' 
-          
+            <?php if (isset($values['languages']) && !empty($values['languages']) && in_array(1, unserialize($values['languages']))) {print 'checked';}?>
             >
             <label for="JS">JS</label>
           </li>
           <li>
             <input type="checkbox" id="Python" name="languages[]" value='2'
-           
+            <?php if (isset($values['languages']) && !empty($values['languages']) && in_array(2, unserialize($values['languages']))) {print 'checked';}?>
             >
             <label for="Python">Python</label>
           </li>
           <li>
             <input type="checkbox" id="C++" name="languages[]" value='3' 
-            
+            <?php if (isset($values['languages']) && !empty($values['languages']) && in_array(3, unserialize($values['languages']))) {print 'checked';}?>
             >
             <label for="C++">C++</label>
           </li>
         </ul>
       </div>
       <div class="form-item">
-        <p  <?php if ($errors['biography1'] || $errors['biography2']) {print 'class="error"';} ?>> О себе: </p>
+        <p  <?php if ($errors['biography']) {print 'class="error"';} ?>> О себе: </p>
         <textarea name="biography" cols=24 rows=4 maxlength=128 ><?php if ($values['biography']) print($values['biography']); ?></textarea>
       </div>
     </div>
