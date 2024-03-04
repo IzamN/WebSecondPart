@@ -124,7 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
           $values['day'] = $dates[0]['day'];
         }
         if (!empty($dates[0]['month'])) {
-          $values['month'] = $_POST['month'];
+          $values['month'] = $dates[0]['month'];
         }
         if (!empty($dates[0]['year'])) {
           $values['year'] = $dates[0]['year'];
