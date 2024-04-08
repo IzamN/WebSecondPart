@@ -176,5 +176,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     die ('Ошибка CSRF: недопустимый токен');
   }
   header('Location: index.php');
-  printf('<div><a href=authout.php>Выйти</a></div>');
+  
 }
