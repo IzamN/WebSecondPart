@@ -1,6 +1,8 @@
 <?php
   session_start();
   session_destroy();
+$_SERVER['PHP_AUTH_USER']=null;
+$_SERVER['PHP_AUTH_PW']=null;
 
 
 header('Location: ./');
