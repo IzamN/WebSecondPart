@@ -23,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $errors['year'] = !empty ($_COOKIE['year_error']);
   $errors['email1'] = !empty ($_COOKIE['email_error1']);
   $errors['email2'] = !empty ($_COOKIE['email_error2']);
+   $errors['biography'] = !empty ($_COOKIE['biography_error']);
   $errors['languages'] = !empty ($_COOKIE['languages_error']);
 
   if ($errors['name']) {
