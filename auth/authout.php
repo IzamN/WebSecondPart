@@ -5,9 +5,10 @@ $_SERVER['PHP_AUTH_USER']=null;
 $_SERVER['PHP_AUTH_PW']=null;
 
 
-header('Location: ./');
+
 // header('Location: http://u67359.kubsu-dev.ru/web2/auth/');
-include('auth.php');
+include('index.php');
+header('Location: ./');
 
 exit();
 
