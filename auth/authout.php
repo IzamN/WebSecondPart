@@ -7,7 +7,7 @@ $_SERVER['PHP_AUTH_PW']=null;
 
 header('Location: ./');
 // header('Location: http://u67359.kubsu-dev.ru/web2/auth/');
-// include('index.php');
+include('auth.php');
 
 exit();
 
