@@ -24,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $errors['email1'] = !empty ($_COOKIE['email_error1']);
   $errors['email2'] = !empty ($_COOKIE['email_error2']);
   $errors['languages'] = !empty ($_COOKIE['languages_error']);
+  $errors['biography'] = !empty ($_COOKIE['biography_error']);
 
   if ($errors['name']) {
     setcookie('name_error', '', 100000);
