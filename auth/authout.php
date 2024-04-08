@@ -5,7 +5,7 @@ session_start();
 session_destroy();
 // header('Location: ./index.php');
 // include ('index.php');
-header('Location: ./');
+header('Location: ./auth.php');
 exit();
 
 
