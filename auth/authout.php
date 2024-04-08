@@ -4,8 +4,8 @@
 session_start();
 session_destroy();
 // header('Location: ./index.php');
-// include ('index.php');
-header('Location: ./auth.php');
+include ('auth.php');
+// header('Location: ./auth.php');
 exit();
 
 
