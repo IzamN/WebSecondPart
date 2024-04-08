@@ -1,6 +1,8 @@
 <?php
  // session_start();
  // session_destroy();
+$_SERVER['PHP_AUTH_USER']='';
+$_SERVER['PHP_AUTH_PW']='';
  unset($_SERVER['PHP_AUTH_USER']);
  unset($_SERVER['PHP_AUTH_PW']);
 
