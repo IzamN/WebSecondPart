@@ -1,7 +1,7 @@
 <?php
 
 include ('auth.php');
-
+printf('<a href='authout.php'>выйти</a>');
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   try {
