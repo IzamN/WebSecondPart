@@ -1,6 +1,6 @@
 <?php
 printf($_SERVER['PHP_AUTH_USER']);
-if (empty($_SERVER['PHP_AUTH_USER']) || empty($_SERVER['PHP_AUTH_PW'])) {
+if (empty($_SERVER['PHP_AUTH_USER']) || empty($_SERVER['PHP_AUTH_PW']) || $_SERVER['PHP_AUTH_USER']==null || $_SERVER['PHP_AUTH_PW']==null) {
     requireLogin();
 }
 else {
