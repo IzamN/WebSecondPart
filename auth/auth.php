@@ -3,7 +3,8 @@
 if (empty($_SERVER['PHP_AUTH_USER']) || empty($_SERVER['PHP_AUTH_PW'])) {
     requireLogin();
 }
-
+else {
+    printf('<div><a href=authout.php>Выйти</a></div>');
  $user = 'u67359';
  $pass = '1353557';
  $db = new PDO('mysql:host=localhost;dbname=u67359', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
